@@ -1,0 +1,41 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "multiple"
+auto-format = false
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+"$" = "extend_to_line_end"
+"^" = "extend_to_line_start"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+"(" = ["half_page_up", "goto_window_center"]
+")" = ["half_page_down", "goto_window_center"]
+"esc" = ["normal_mode", "collapse_selection"]
+"C-k" = ["goto_next_buffer"]
+"C-j" = ["goto_previous_buffer"]
+"space" = { "x" = [":buffer-close"], "=" = [":format"] }
+"g" = { "n" = ["goto_next_diag"], "p" = ["goto_prev_diag"] }
+"tab" = ["hover"]
+
+[keys.select]
+"$" = "extend_to_line_end"
+"^" = "extend_to_line_start"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+"(" = ["half_page_up", "goto_window_center"]
+")" = ["half_page_down", "goto_window_center"]
+"esc" = ["normal_mode", "collapse_selection"]
