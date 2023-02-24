@@ -5,6 +5,8 @@ line-number = "relative"
 cursorline = true
 bufferline = "multiple"
 auto-format = false
+idle-timeout = 20
+completion-trigger-len = 1
 
 [editor.indent-guides]
 render = true
