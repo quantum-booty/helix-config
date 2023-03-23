@@ -5,3 +5,13 @@ roots = ["pyproject.toml"]
 language-server = { command = "pyright-langserver", args = ["--stdio"] }
 config = {}
 formatter = { command = "black", args = ["-", "-q"] }
+
+[[language]]
+name = "c-sharp"
+# scope = "source.csharp"
+injection-regex = "c-?sharp"
+file-types = ["cs"]
+roots = ["sln", "csproj"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "\t" }
+language-server = { command = "omnisharp", args = [ "--languageserver" ] }

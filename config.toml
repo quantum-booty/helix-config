@@ -7,6 +7,11 @@ bufferline = "multiple"
 auto-format = false
 idle-timeout = 20
 completion-trigger-len = 1
+auto-pairs = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
 
 [editor.indent-guides]
 render = true
@@ -19,9 +24,16 @@ normal = "block"
 [editor.file-picker]
 hidden = false
 
+
+[editor.jump-mode]
+jump-keys = "jwetovxqpdygfblzhckisuranmJWETOVXQPDYGFBLZHCKISURANM"
+num-chars-before-label = 2
+
 [keys.normal]
-"$" = "extend_to_line_end"
-"^" = "extend_to_line_start"
+"ret" = "jump_to_str_label"
+"C-ret" = "jump_to_str_label"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
 "(" = ["half_page_up", "goto_window_center"]
@@ -29,15 +41,30 @@ hidden = false
 "esc" = ["normal_mode", "collapse_selection"]
 "C-k" = ["goto_next_buffer"]
 "C-j" = ["goto_previous_buffer"]
-"space" = { "x" = [":buffer-close"], "=" = [":format"] }
-"g" = { "n" = ["goto_next_diag"], "p" = ["goto_prev_diag"] }
+"C-y" = ["jump_forward"]
+"space" = { "x" = [":buffer-close"], "X" = [":buffer-close-others"], "=" = [":format"], "c" = ["code_action"] }
+"g" = { "n" = ["goto_next_diag"], "p" = ["goto_prev_diag"], "t" = ["goto_type_definition"], "[" = ["goto_prev_change"], "]" = ["goto_next_change"] }
+"S-h" = ["goto_window_top"]
+"S-m" = ["goto_window_center"]
+"S-l" = ["goto_window_bottom"]
 "tab" = ["hover"]
+"D" = ["kill_to_line_end"]
+"G" = ["goto_file_end"]
+"*" = ["search_selection", "search_next"]
+"#" = ["search_selection", "search_prev"]
+"left" = ["jump_view_left"]
+"right" = ["jump_view_right"]
+"up" = ["jump_view_up"]
+"down" = ["jump_view_down"]
+X = "extend_line_above"
+c = ["trim_selections", "change_selection"]
 
 [keys.select]
-"$" = "extend_to_line_end"
-"^" = "extend_to_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
-"(" = ["half_page_up", "goto_window_center"]
-")" = ["half_page_down", "goto_window_center"]
+# "(" = ["half_page_up", "goto_window_center"]
+# ")" = ["half_page_down", "goto_window_center"]
 "esc" = ["normal_mode", "collapse_selection"]
+"G" = ["goto_file_end"]
